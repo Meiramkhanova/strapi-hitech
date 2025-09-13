@@ -14,5 +14,33 @@
       "localized": true
     }
   },
-  "attributes": {}
+  "attributes": {
+    "swiper": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "components.main-swiper"
+      ]
+    },
+    "about": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "sections.about"
+      ]
+    },
+    "aboutinfos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aboutinfo.aboutinfo"
+    }
+  }
 }
