@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navlinks",
+  "info": {
+    "singularName": "navlink",
+    "pluralName": "navlinks",
+    "displayName": "navlink"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "url": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
