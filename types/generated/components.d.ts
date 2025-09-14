@@ -9,7 +9,6 @@ export interface ComponentsMainSwiper extends Struct.ComponentSchema {
     desc: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
-    text: Schema.Attribute.Text;
   };
 }
 
@@ -28,11 +27,25 @@ export interface SectionsAbout extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsMainNews extends Struct.ComponentSchema {
+  collectionName: 'components_sections_main_news';
+  info: {
+    displayName: 'main-news';
+  };
+  attributes: {
+    createdTime: Schema.Attribute.Date;
+    newsDesc: Schema.Attribute.Text;
+    newsImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    newsTitle: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.main-swiper': ComponentsMainSwiper;
       'sections.about': SectionsAbout;
+      'sections.main-news': SectionsMainNews;
     }
   }
 }

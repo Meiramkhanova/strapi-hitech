@@ -450,6 +450,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::homepage.homepage'
     >;
+    mainNews: Schema.Attribute.DynamicZone<['sections.main-news']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     swiper: Schema.Attribute.DynamicZone<['components.main-swiper']> &
       Schema.Attribute.SetPluginOptions<{

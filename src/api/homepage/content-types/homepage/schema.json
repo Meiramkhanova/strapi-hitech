@@ -41,6 +41,17 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::aboutinfo.aboutinfo"
+    },
+    "mainNews": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "sections.main-news"
+      ]
     }
   }
 }
