@@ -52,6 +52,11 @@
       "components": [
         "sections.main-news"
       ]
+    },
+    "tabs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tab.tab"
     }
   }
 }

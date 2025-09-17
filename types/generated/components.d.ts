@@ -40,12 +40,21 @@ export interface SectionsMainNews extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsSections extends Struct.ComponentSchema {
+  collectionName: 'components_sections_sections';
+  info: {
+    displayName: 'sections';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.main-swiper': ComponentsMainSwiper;
       'sections.about': SectionsAbout;
       'sections.main-news': SectionsMainNews;
+      'sections.sections': SectionsSections;
     }
   }
 }
