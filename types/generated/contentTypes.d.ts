@@ -609,7 +609,9 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
       'api::tab-content.tab-content'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<['sections.sections']> &
+    sections: Schema.Attribute.DynamicZone<
+      ['sections.tab-content-main-section']
+    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

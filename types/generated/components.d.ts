@@ -48,6 +48,22 @@ export interface SectionsSections extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface SectionsTabContentMainSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_tab_content_main_sections';
+  info: {
+    displayName: 'TabContentMainSection';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -55,6 +71,7 @@ declare module '@strapi/strapi' {
       'sections.about': SectionsAbout;
       'sections.main-news': SectionsMainNews;
       'sections.sections': SectionsSections;
+      'sections.tab-content-main-section': SectionsTabContentMainSection;
     }
   }
 }
