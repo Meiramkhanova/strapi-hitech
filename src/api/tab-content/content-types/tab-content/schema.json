@@ -69,7 +69,9 @@
         }
       },
       "components": [
-        "sections.tab-content-main-section"
+        "sections.tab-content-main-section",
+        "sections.about-department",
+        "sections.main-areas-activity"
       ]
     }
   }

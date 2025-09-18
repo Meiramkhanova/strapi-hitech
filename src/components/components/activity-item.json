@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_activity_items",
+  "info": {
+    "displayName": "ActivityItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

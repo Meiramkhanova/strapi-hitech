@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsActivityItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_activity_items';
+  info: {
+    displayName: 'ActivityItem';
+  };
+  attributes: {
+    desc: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsMainSwiper extends Struct.ComponentSchema {
   collectionName: 'components_components_main_swipers';
   info: {
@@ -24,6 +35,27 @@ export interface SectionsAbout extends Struct.ComponentSchema {
       true
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsAboutDepartment extends Struct.ComponentSchema {
+  collectionName: 'components_sections_about_departments';
+  info: {
+    displayName: 'AboutDepartment';
+  };
+  attributes: {
+    description: Schema.Attribute.JSON;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsMainAreasActivity extends Struct.ComponentSchema {
+  collectionName: 'components_sections_main_areas_activities';
+  info: {
+    displayName: 'MainAreasActivity';
+  };
+  attributes: {
+    activityItems: Schema.Attribute.Component<'components.activity-item', true>;
   };
 }
 
@@ -67,8 +99,11 @@ export interface SectionsTabContentMainSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.activity-item': ComponentsActivityItem;
       'components.main-swiper': ComponentsMainSwiper;
       'sections.about': SectionsAbout;
+      'sections.about-department': SectionsAboutDepartment;
+      'sections.main-areas-activity': SectionsMainAreasActivity;
       'sections.main-news': SectionsMainNews;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;

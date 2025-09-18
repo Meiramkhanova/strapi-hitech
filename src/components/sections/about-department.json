@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_about_departments",
+  "info": {
+    "displayName": "AboutDepartment"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

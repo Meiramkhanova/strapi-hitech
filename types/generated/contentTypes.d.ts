@@ -610,7 +610,11 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<
-      ['sections.tab-content-main-section']
+      [
+        'sections.tab-content-main-section',
+        'sections.about-department',
+        'sections.main-areas-activity',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

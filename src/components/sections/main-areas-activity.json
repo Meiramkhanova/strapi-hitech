@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_main_areas_activities",
+  "info": {
+    "displayName": "MainAreasActivity"
+  },
+  "options": {},
+  "attributes": {
+    "activityItems": {
+      "type": "component",
+      "component": "components.activity-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
