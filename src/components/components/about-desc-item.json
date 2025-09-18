@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_about_desc_items",
+  "info": {
+    "displayName": "AboutDescItem"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

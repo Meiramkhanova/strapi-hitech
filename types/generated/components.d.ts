@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsAboutDescItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_about_desc_items';
+  info: {
+    displayName: 'AboutDescItem';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface ComponentsActivityItem extends Struct.ComponentSchema {
   collectionName: 'components_components_activity_items';
   info: {
@@ -44,7 +54,7 @@ export interface SectionsAboutDepartment extends Struct.ComponentSchema {
     displayName: 'AboutDepartment';
   };
   attributes: {
-    description: Schema.Attribute.JSON;
+    desc: Schema.Attribute.Component<'components.about-desc-item', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -99,6 +109,7 @@ export interface SectionsTabContentMainSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.about-desc-item': ComponentsAboutDescItem;
       'components.activity-item': ComponentsActivityItem;
       'components.main-swiper': ComponentsMainSwiper;
       'sections.about': SectionsAbout;

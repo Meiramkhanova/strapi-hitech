@@ -8,8 +8,10 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "json"
+    "desc": {
+      "type": "component",
+      "component": "components.about-desc-item",
+      "repeatable": true
     }
   },
   "config": {}
