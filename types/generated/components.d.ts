@@ -32,14 +32,14 @@ export interface ComponentsActivityItem extends Struct.ComponentSchema {
   };
 }
 
-export interface ComponentsItemWithNumber extends Struct.ComponentSchema {
-  collectionName: 'components_components_item_with_numbers';
+export interface ComponentsApproachItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_approach_items';
   info: {
-    displayName: 'ItemWithNumber';
+    displayName: 'ApproachItem';
   };
   attributes: {
     desc: Schema.Attribute.Text;
-    order: Schema.Attribute.String;
+    number: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -94,6 +94,31 @@ export interface SectionsAboutDepartment extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsAboutSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_about_sections';
+  info: {
+    displayName: 'AboutSection';
+  };
+  attributes: {
+    tech_instruments: Schema.Attribute.Component<
+      'components.activity-item',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsAboutUsingAiSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_about_using_ai_sections';
+  info: {
+    displayName: 'about-using-ai-section';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    using_ais: Schema.Attribute.Relation<'oneToMany', 'api::using-ai.using-ai'>;
+  };
+}
+
 export interface SectionsMainAreasActivity extends Struct.ComponentSchema {
   collectionName: 'components_sections_main_areas_activities';
   info: {
@@ -141,21 +166,39 @@ export interface SectionsTabContentMainSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsTemp extends Struct.ComponentSchema {
+  collectionName: 'components_sections_temps';
+  info: {
+    displayName: 'AboutOrderSection';
+  };
+  attributes: {
+    about_approach: Schema.Attribute.Component<
+      'components.approach-item',
+      true
+    >;
+    desc: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.about-desc-item': ComponentsAboutDescItem;
       'components.about-history': ComponentsAboutHistory;
       'components.activity-item': ComponentsActivityItem;
-      'components.item-with-number': ComponentsItemWithNumber;
+      'components.approach-item': ComponentsApproachItem;
       'components.main-swiper': ComponentsMainSwiper;
       'components.mission-item': ComponentsMissionItem;
       'sections.about': SectionsAbout;
       'sections.about-department': SectionsAboutDepartment;
+      'sections.about-section': SectionsAboutSection;
+      'sections.about-using-ai-section': SectionsAboutUsingAiSection;
       'sections.main-areas-activity': SectionsMainAreasActivity;
       'sections.main-news': SectionsMainNews;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
+      'sections.temp': SectionsTemp;
     }
   }
 }

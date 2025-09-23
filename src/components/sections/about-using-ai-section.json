@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_about_using_ai_sections",
+  "info": {
+    "displayName": "about-using-ai-section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "using_ais": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::using-ai.using-ai"
+    }
+  },
+  "config": {}
+}

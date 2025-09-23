@@ -1,11 +1,11 @@
 {
-  "collectionName": "components_components_item_with_numbers",
+  "collectionName": "components_components_approach_items",
   "info": {
-    "displayName": "ItemWithNumber"
+    "displayName": "ApproachItem"
   },
   "options": {},
   "attributes": {
-    "order": {
+    "number": {
       "type": "string"
     },
     "title": {

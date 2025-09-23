@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_about_sections",
+  "info": {
+    "displayName": "AboutSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tech_instruments": {
+      "type": "component",
+      "component": "components.activity-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_temps",
+  "info": {
+    "displayName": "AboutOrderSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "about_approach": {
+      "type": "component",
+      "component": "components.approach-item",
+      "repeatable": true
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
