@@ -10,6 +10,17 @@ export interface ComponentsAboutDescItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsAboutHistory extends Struct.ComponentSchema {
+  collectionName: 'components_components_about_histories';
+  info: {
+    displayName: 'about-history';
+  };
+  attributes: {
+    year: Schema.Attribute.String;
+    yearDesc: Schema.Attribute.Text;
+  };
+}
+
 export interface ComponentsActivityItem extends Struct.ComponentSchema {
   collectionName: 'components_components_activity_items';
   info: {
@@ -17,6 +28,18 @@ export interface ComponentsActivityItem extends Struct.ComponentSchema {
   };
   attributes: {
     desc: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsItemWithNumber extends Struct.ComponentSchema {
+  collectionName: 'components_components_item_with_numbers';
+  info: {
+    displayName: 'ItemWithNumber';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    order: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -30,6 +53,18 @@ export interface ComponentsMainSwiper extends Struct.ComponentSchema {
     desc: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsMissionItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_mission_items';
+  info: {
+    displayName: 'MissionItem';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -110,8 +145,11 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'components.about-desc-item': ComponentsAboutDescItem;
+      'components.about-history': ComponentsAboutHistory;
       'components.activity-item': ComponentsActivityItem;
+      'components.item-with-number': ComponentsItemWithNumber;
       'components.main-swiper': ComponentsMainSwiper;
+      'components.mission-item': ComponentsMissionItem;
       'sections.about': SectionsAbout;
       'sections.about-department': SectionsAboutDepartment;
       'sections.main-areas-activity': SectionsMainAreasActivity;

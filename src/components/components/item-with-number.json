@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_item_with_numbers",
+  "info": {
+    "displayName": "ItemWithNumber"
+  },
+  "options": {},
+  "attributes": {
+    "order": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

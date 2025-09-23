@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_about_histories",
+  "info": {
+    "displayName": "about-history"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "string"
+    },
+    "yearDesc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

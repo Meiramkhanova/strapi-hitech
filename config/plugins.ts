@@ -1,14 +1,23 @@
-module.exports = {
+module.exports = ({ env }) => ({
   upload: {
-    providerOptions: {
-      local: {
-        allowedMimeTypes: [
-          "image/jpeg",
-          "image/png",
-          "image/gif",
-          "image/webp", // разрешаем WebP
-        ],
+    config: {
+      providerOptions: {
+        local: {
+          allowedMimeTypes: [
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "image/webp",
+          ],
+        },
       },
     },
   },
-};
+
+  // добавляем populate-deep
+  "populate-deep": {
+    config: {
+      defaultDepth: 5, // глубина по умолчанию (можешь менять)
+    },
+  },
+});
