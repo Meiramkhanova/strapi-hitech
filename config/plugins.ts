@@ -1,4 +1,5 @@
-module.exports = ({ env }) => ({
+// config/plugins.ts
+export default () => ({
   upload: {
     config: {
       providerOptions: {
@@ -11,13 +12,6 @@ module.exports = ({ env }) => ({
           ],
         },
       },
-    },
-  },
-
-  // добавляем populate-deep
-  "populate-deep": {
-    config: {
-      defaultDepth: 5, // глубина по умолчанию (можешь менять)
     },
   },
 });

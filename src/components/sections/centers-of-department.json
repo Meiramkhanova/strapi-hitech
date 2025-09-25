@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_centers_of_departments",
+  "info": {
+    "displayName": "centers-of-department"
+  },
+  "options": {},
+  "attributes": {
+    "center_departments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::center-department.center-department"
+    }
+  },
+  "config": {}
+}

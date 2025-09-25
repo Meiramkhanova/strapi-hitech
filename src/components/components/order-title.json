@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_order_titles",
+  "info": {
+    "displayName": "OrderTitle"
+  },
+  "options": {},
+  "attributes": {
+    "order": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

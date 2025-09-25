@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_masterd_degree_of_centers",
+  "info": {
+    "displayName": "masters_degree_of_center"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

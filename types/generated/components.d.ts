@@ -68,6 +68,17 @@ export interface ComponentsMissionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsOrderTitle extends Struct.ComponentSchema {
+  collectionName: 'components_components_order_titles';
+  info: {
+    displayName: 'OrderTitle';
+  };
+  attributes: {
+    order: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsAbout extends Struct.ComponentSchema {
   collectionName: 'components_sections_abouts';
   info: {
@@ -90,6 +101,17 @@ export interface SectionsAboutDepartment extends Struct.ComponentSchema {
   };
   attributes: {
     desc: Schema.Attribute.Component<'components.about-desc-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsAboutDepartmentCenter extends Struct.ComponentSchema {
+  collectionName: 'components_sections_about_department_centers';
+  info: {
+    displayName: 'about_department_center';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -119,6 +141,43 @@ export interface SectionsAboutUsingAiSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCentersOfDepartment extends Struct.ComponentSchema {
+  collectionName: 'components_sections_centers_of_departments';
+  info: {
+    displayName: 'centers-of-department';
+  };
+  attributes: {
+    center_departments: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::center-department.center-department'
+    >;
+  };
+}
+
+export interface SectionsExampleProjectsOfCenter
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sections_example_projects_of_centers';
+  info: {
+    displayName: 'example_projects_of_center';
+  };
+  attributes: {
+    example_projects_of_center: Schema.Attribute.Component<
+      'components.order-title',
+      true
+    >;
+  };
+}
+
+export interface SectionsMainActivitiesOfCenter extends Struct.ComponentSchema {
+  collectionName: 'components_sections_main_activities_of_centers';
+  info: {
+    displayName: 'main_activities_of_center';
+  };
+  attributes: {
+    main_activities: Schema.Attribute.Component<'components.order-title', true>;
+  };
+}
+
 export interface SectionsMainAreasActivity extends Struct.ComponentSchema {
   collectionName: 'components_sections_main_areas_activities';
   info: {
@@ -139,6 +198,31 @@ export interface SectionsMainNews extends Struct.ComponentSchema {
     newsDesc: Schema.Attribute.Text;
     newsImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     newsTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsMasterdDegreeOfCenter extends Struct.ComponentSchema {
+  collectionName: 'components_sections_masterd_degree_of_centers';
+  info: {
+    displayName: 'masters_degree_of_center';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsPotentialPartnersOfCenter
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sections_potential_partners_of_centers';
+  info: {
+    displayName: 'potential_partners_of_center';
+  };
+  attributes: {
+    potential_partners: Schema.Attribute.Component<
+      'components.order-title',
+      true
+    >;
   };
 }
 
@@ -190,12 +274,19 @@ declare module '@strapi/strapi' {
       'components.approach-item': ComponentsApproachItem;
       'components.main-swiper': ComponentsMainSwiper;
       'components.mission-item': ComponentsMissionItem;
+      'components.order-title': ComponentsOrderTitle;
       'sections.about': SectionsAbout;
       'sections.about-department': SectionsAboutDepartment;
+      'sections.about-department-center': SectionsAboutDepartmentCenter;
       'sections.about-section': SectionsAboutSection;
       'sections.about-using-ai-section': SectionsAboutUsingAiSection;
+      'sections.centers-of-department': SectionsCentersOfDepartment;
+      'sections.example-projects-of-center': SectionsExampleProjectsOfCenter;
+      'sections.main-activities-of-center': SectionsMainActivitiesOfCenter;
       'sections.main-areas-activity': SectionsMainAreasActivity;
       'sections.main-news': SectionsMainNews;
+      'sections.masterd-degree-of-center': SectionsMasterdDegreeOfCenter;
+      'sections.potential-partners-of-center': SectionsPotentialPartnersOfCenter;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
       'sections.temp': SectionsTemp;

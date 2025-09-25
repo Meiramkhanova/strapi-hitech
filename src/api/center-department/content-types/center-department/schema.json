@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tab_contents",
+  "collectionName": "center_departments",
   "info": {
-    "singularName": "tab-content",
-    "pluralName": "tab-contents",
-    "displayName": "TabContent"
+    "singularName": "center-department",
+    "pluralName": "center-departments",
+    "displayName": "center-department"
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +15,6 @@
     }
   },
   "attributes": {
-    "tab": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::tab.tab",
-      "inversedBy": "tab_contents"
-    },
     "title": {
       "type": "string",
       "pluginOptions": {
@@ -28,29 +22,6 @@
           "localized": true
         }
       }
-    },
-    "desc": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "icon": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     },
     "slug": {
       "type": "string",
@@ -61,6 +32,22 @@
       },
       "unique": true
     },
+    "desc": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "order": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "sections": {
       "type": "dynamiczone",
       "pluginOptions": {
@@ -69,10 +56,11 @@
         }
       },
       "components": [
-        "sections.tab-content-main-section",
-        "sections.about-department",
-        "sections.main-areas-activity",
-        "sections.centers-of-department"
+        "sections.about-department-center",
+        "sections.main-activities-of-center",
+        "sections.example-projects-of-center",
+        "sections.masterd-degree-of-center",
+        "sections.potential-partners-of-center"
       ]
     }
   }

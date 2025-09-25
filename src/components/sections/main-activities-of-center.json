@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_main_activities_of_centers",
+  "info": {
+    "displayName": "main_activities_of_center"
+  },
+  "options": {},
+  "attributes": {
+    "main_activities": {
+      "type": "component",
+      "component": "components.order-title",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_example_projects_of_centers",
+  "info": {
+    "displayName": "example_projects_of_center"
+  },
+  "options": {},
+  "attributes": {
+    "example_projects_of_center": {
+      "type": "component",
+      "component": "components.order-title",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

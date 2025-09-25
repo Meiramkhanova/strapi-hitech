@@ -504,6 +504,77 @@ export interface ApiAboutpageAboutpage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCenterDepartmentCenterDepartment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'center_departments';
+  info: {
+    displayName: 'center-department';
+    pluralName: 'center-departments';
+    singularName: 'center-department';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desc: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::center-department.center-department'
+    >;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'sections.about-department-center',
+        'sections.main-activities-of-center',
+        'sections.example-projects-of-center',
+        'sections.masterd-degree-of-center',
+        'sections.potential-partners-of-center',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -702,6 +773,7 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
         'sections.tab-content-main-section',
         'sections.about-department',
         'sections.main-areas-activity',
+        'sections.centers-of-department',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1334,6 +1406,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aboutinfo.aboutinfo': ApiAboutinfoAboutinfo;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
+      'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::main-about-section.main-about-section': ApiMainAboutSectionMainAboutSection;
       'api::navlink.navlink': ApiNavlinkNavlink;

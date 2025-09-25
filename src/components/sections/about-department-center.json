@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_about_department_centers",
+  "info": {
+    "displayName": "about_department_center"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
