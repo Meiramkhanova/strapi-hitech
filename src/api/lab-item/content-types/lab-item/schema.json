@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "center_departments",
+  "collectionName": "lab_items",
   "info": {
-    "singularName": "center-department",
-    "pluralName": "center-departments",
-    "displayName": "center-department"
+    "singularName": "lab-item",
+    "pluralName": "lab-items",
+    "displayName": "LabItem"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,38 @@
     }
   },
   "attributes": {
+    "icon": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "subtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "desc": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -32,23 +63,7 @@
       },
       "unique": true
     },
-    "desc": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "order": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "sections": {
+    "section": {
       "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
@@ -56,13 +71,7 @@
         }
       },
       "components": [
-        "sections.about-department-center",
-        "sections.masterd-degree-of-center",
-        "sections.fintech-item",
-        "sections.center-title-order-items",
-        "sections.mission-product-info",
-        "sections.title-unordered-items",
-        "sections.title-ordered-big-items"
+        "sections.about-department-center"
       ]
     }
   }

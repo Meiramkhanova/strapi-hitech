@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_mission_product_infos",
+  "info": {
+    "displayName": "MissionProductInfo"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "missionDesc": {
+      "type": "text"
+    },
+    "productDesc": {
+      "type": "text"
+    },
+    "targetAudience": {
+      "type": "text"
+    },
+    "durationOfTraining": {
+      "type": "text"
+    },
+    "problem": {
+      "type": "text"
+    },
+    "solution": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

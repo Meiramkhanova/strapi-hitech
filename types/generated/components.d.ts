@@ -68,6 +68,18 @@ export interface ComponentsMissionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsOrderItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_order_items';
+  info: {
+    displayName: 'OrderItem';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsOrderTitle extends Struct.ComponentSchema {
   collectionName: 'components_components_order_titles';
   info: {
@@ -141,6 +153,17 @@ export interface SectionsAboutUsingAiSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCenterTitleOrderItems extends Struct.ComponentSchema {
+  collectionName: 'components_sections_center_title_order_items';
+  info: {
+    displayName: 'CenterTitleOrderItems';
+  };
+  attributes: {
+    order_items: Schema.Attribute.Component<'components.order-title', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsCentersOfDepartment extends Struct.ComponentSchema {
   collectionName: 'components_sections_centers_of_departments';
   info: {
@@ -154,27 +177,30 @@ export interface SectionsCentersOfDepartment extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsExampleProjectsOfCenter
-  extends Struct.ComponentSchema {
-  collectionName: 'components_sections_example_projects_of_centers';
+export interface SectionsFintechItem extends Struct.ComponentSchema {
+  collectionName: 'components_sections_fintech_items';
   info: {
-    displayName: 'example_projects_of_center';
+    displayName: 'FintechItem';
   };
   attributes: {
-    example_projects_of_center: Schema.Attribute.Component<
-      'components.order-title',
-      true
-    >;
+    innerTitleOne: Schema.Attribute.String;
+    innerTitleThree: Schema.Attribute.String;
+    innerTitleThreeBold: Schema.Attribute.String;
+    innerTitleThreeGrey: Schema.Attribute.String;
+    innerTitleTwo: Schema.Attribute.String;
+    innerTitleTwoBold: Schema.Attribute.String;
+    innerTitleTwoGrey: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String;
   };
 }
 
-export interface SectionsMainActivitiesOfCenter extends Struct.ComponentSchema {
-  collectionName: 'components_sections_main_activities_of_centers';
+export interface SectionsFintechSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_fintech_sections';
   info: {
-    displayName: 'main_activities_of_center';
+    displayName: 'fintechSection';
   };
   attributes: {
-    main_activities: Schema.Attribute.Component<'components.order-title', true>;
+    fintechSection: Schema.Attribute.Component<'sections.fintech-item', false>;
   };
 }
 
@@ -212,17 +238,19 @@ export interface SectionsMasterdDegreeOfCenter extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsPotentialPartnersOfCenter
-  extends Struct.ComponentSchema {
-  collectionName: 'components_sections_potential_partners_of_centers';
+export interface SectionsMissionProductInfo extends Struct.ComponentSchema {
+  collectionName: 'components_sections_mission_product_infos';
   info: {
-    displayName: 'potential_partners_of_center';
+    displayName: 'MissionProductInfo';
   };
   attributes: {
-    potential_partners: Schema.Attribute.Component<
-      'components.order-title',
-      true
-    >;
+    durationOfTraining: Schema.Attribute.Text;
+    missionDesc: Schema.Attribute.Text;
+    problem: Schema.Attribute.Text;
+    productDesc: Schema.Attribute.Text;
+    sectionTitle: Schema.Attribute.String;
+    solution: Schema.Attribute.Text;
+    targetAudience: Schema.Attribute.Text;
   };
 }
 
@@ -265,6 +293,39 @@ export interface SectionsTemp extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsTitleOrderedBigItems extends Struct.ComponentSchema {
+  collectionName: 'components_sections_title_ordered_big_items';
+  info: {
+    displayName: 'TitleOrderedBigItems';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'components.order-item', true>;
+    sectionTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTitleOrderedItems extends Struct.ComponentSchema {
+  collectionName: 'components_sections_title_ordered_items';
+  info: {
+    displayName: 'TitleOrderedItems';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'components.approach-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTitleUnorderedItems extends Struct.ComponentSchema {
+  collectionName: 'components_sections_title_unordered_items';
+  info: {
+    displayName: 'TitleUnorderedItems';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'components.activity-item', true>;
+    sectionTitle: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -274,22 +335,27 @@ declare module '@strapi/strapi' {
       'components.approach-item': ComponentsApproachItem;
       'components.main-swiper': ComponentsMainSwiper;
       'components.mission-item': ComponentsMissionItem;
+      'components.order-item': ComponentsOrderItem;
       'components.order-title': ComponentsOrderTitle;
       'sections.about': SectionsAbout;
       'sections.about-department': SectionsAboutDepartment;
       'sections.about-department-center': SectionsAboutDepartmentCenter;
       'sections.about-section': SectionsAboutSection;
       'sections.about-using-ai-section': SectionsAboutUsingAiSection;
+      'sections.center-title-order-items': SectionsCenterTitleOrderItems;
       'sections.centers-of-department': SectionsCentersOfDepartment;
-      'sections.example-projects-of-center': SectionsExampleProjectsOfCenter;
-      'sections.main-activities-of-center': SectionsMainActivitiesOfCenter;
+      'sections.fintech-item': SectionsFintechItem;
+      'sections.fintech-section': SectionsFintechSection;
       'sections.main-areas-activity': SectionsMainAreasActivity;
       'sections.main-news': SectionsMainNews;
       'sections.masterd-degree-of-center': SectionsMasterdDegreeOfCenter;
-      'sections.potential-partners-of-center': SectionsPotentialPartnersOfCenter;
+      'sections.mission-product-info': SectionsMissionProductInfo;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
       'sections.temp': SectionsTemp;
+      'sections.title-ordered-big-items': SectionsTitleOrderedBigItems;
+      'sections.title-ordered-items': SectionsTitleOrderedItems;
+      'sections.title-unordered-items': SectionsTitleUnorderedItems;
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_title_ordered_big_items",
+  "info": {
+    "displayName": "TitleOrderedBigItems"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "components.order-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

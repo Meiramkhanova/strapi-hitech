@@ -545,10 +545,12 @@ export interface ApiCenterDepartmentCenterDepartment
     sections: Schema.Attribute.DynamicZone<
       [
         'sections.about-department-center',
-        'sections.main-activities-of-center',
-        'sections.example-projects-of-center',
         'sections.masterd-degree-of-center',
-        'sections.potential-partners-of-center',
+        'sections.fintech-item',
+        'sections.center-title-order-items',
+        'sections.mission-product-info',
+        'sections.title-unordered-items',
+        'sections.title-ordered-big-items',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -623,6 +625,163 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         };
       }>;
     tabs: Schema.Attribute.Relation<'oneToMany', 'api::tab.tab'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLabDirectionLabDirection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'lab_directions';
+  info: {
+    displayName: 'LabDirection';
+    pluralName: 'lab-directions';
+    singularName: 'lab-direction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lab_items: Schema.Attribute.Relation<'oneToMany', 'api::lab-item.lab-item'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lab-direction.lab-direction'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLabItemLabItem extends Struct.CollectionTypeSchema {
+  collectionName: 'lab_items';
+  info: {
+    displayName: 'LabItem';
+    pluralName: 'lab-items';
+    singularName: 'lab-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desc: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lab-item.lab-item'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    section: Schema.Attribute.DynamicZone<
+      ['sections.about-department-center']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLeadLead extends Struct.CollectionTypeSchema {
+  collectionName: 'leads';
+  info: {
+    displayName: 'Lead';
+    pluralName: 'leads';
+    singularName: 'lead';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::lead.lead'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1408,6 +1567,9 @@ declare module '@strapi/strapi' {
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::lab-direction.lab-direction': ApiLabDirectionLabDirection;
+      'api::lab-item.lab-item': ApiLabItemLabItem;
+      'api::lead.lead': ApiLeadLead;
       'api::main-about-section.main-about-section': ApiMainAboutSectionMainAboutSection;
       'api::navlink.navlink': ApiNavlinkNavlink;
       'api::tab-content.tab-content': ApiTabContentTabContent;

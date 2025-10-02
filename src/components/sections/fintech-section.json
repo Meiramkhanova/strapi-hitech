@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_fintech_sections",
+  "info": {
+    "displayName": "fintechSection"
+  },
+  "options": {},
+  "attributes": {
+    "fintechSection": {
+      "type": "component",
+      "component": "sections.fintech-item",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

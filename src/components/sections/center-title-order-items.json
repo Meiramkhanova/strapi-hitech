@@ -1,11 +1,14 @@
 {
-  "collectionName": "components_sections_main_activities_of_centers",
+  "collectionName": "components_sections_center_title_order_items",
   "info": {
-    "displayName": "main_activities_of_center"
+    "displayName": "CenterTitleOrderItems"
   },
   "options": {},
   "attributes": {
-    "main_activities": {
+    "title": {
+      "type": "string"
+    },
+    "order_items": {
       "type": "component",
       "component": "components.order-title",
       "repeatable": true

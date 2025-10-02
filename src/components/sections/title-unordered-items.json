@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_title_unordered_items",
+  "info": {
+    "displayName": "TitleUnorderedItems"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "components.activity-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

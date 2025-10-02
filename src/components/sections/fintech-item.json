@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_fintech_items",
+  "info": {
+    "displayName": "FintechItem"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "innerTitleOne": {
+      "type": "string"
+    },
+    "innerTitleTwo": {
+      "type": "string"
+    },
+    "innerTitleThree": {
+      "type": "string"
+    },
+    "innerTitleTwoBold": {
+      "type": "string"
+    },
+    "innerTitleTwoGrey": {
+      "type": "string"
+    },
+    "innerTitleThreeBold": {
+      "type": "string"
+    },
+    "innerTitleThreeGrey": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

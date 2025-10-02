@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_order_items",
+  "info": {
+    "displayName": "OrderItem"
+  },
+  "options": {},
+  "attributes": {
+    "order": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

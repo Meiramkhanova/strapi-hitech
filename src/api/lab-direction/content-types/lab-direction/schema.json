@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lab_directions",
+  "info": {
+    "singularName": "lab-direction",
+    "pluralName": "lab-directions",
+    "displayName": "LabDirection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "lab_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lab-item.lab-item"
+    }
+  }
+}
