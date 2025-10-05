@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_lab_item_single_infos",
+  "info": {
+    "displayName": "lab-item-single-info"
+  },
+  "options": {},
+  "attributes": {
+    "main_section_title": {
+      "type": "string"
+    },
+    "main_section_desc": {
+      "type": "string"
+    },
+    "focus_title": {
+      "type": "text"
+    },
+    "skills": {
+      "type": "component",
+      "component": "components.about-desc-item",
+      "repeatable": true
+    },
+    "careers": {
+      "type": "component",
+      "component": "components.about-desc-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

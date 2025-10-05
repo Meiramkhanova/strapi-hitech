@@ -204,6 +204,20 @@ export interface SectionsFintechSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsLabItemSingleInfo extends Struct.ComponentSchema {
+  collectionName: 'components_sections_lab_item_single_infos';
+  info: {
+    displayName: 'lab-item-single-info';
+  };
+  attributes: {
+    careers: Schema.Attribute.Component<'components.about-desc-item', true>;
+    focus_title: Schema.Attribute.Text;
+    main_section_desc: Schema.Attribute.String;
+    main_section_title: Schema.Attribute.String;
+    skills: Schema.Attribute.Component<'components.about-desc-item', true>;
+  };
+}
+
 export interface SectionsMainAreasActivity extends Struct.ComponentSchema {
   collectionName: 'components_sections_main_areas_activities';
   info: {
@@ -346,6 +360,7 @@ declare module '@strapi/strapi' {
       'sections.centers-of-department': SectionsCentersOfDepartment;
       'sections.fintech-item': SectionsFintechItem;
       'sections.fintech-section': SectionsFintechSection;
+      'sections.lab-item-single-info': SectionsLabItemSingleInfo;
       'sections.main-areas-activity': SectionsMainAreasActivity;
       'sections.main-news': SectionsMainNews;
       'sections.masterd-degree-of-center': SectionsMasterdDegreeOfCenter;

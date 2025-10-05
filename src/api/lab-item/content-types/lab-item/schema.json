@@ -71,7 +71,7 @@
         }
       },
       "components": [
-        "sections.about-department-center"
+        "sections.lab-item-single-info"
       ]
     }
   }

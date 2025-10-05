@@ -707,9 +707,7 @@ export interface ApiLabItemLabItem extends Struct.CollectionTypeSchema {
       'api::lab-item.lab-item'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    section: Schema.Attribute.DynamicZone<
-      ['sections.about-department-center']
-    > &
+    section: Schema.Attribute.DynamicZone<['sections.lab-item-single-info']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
