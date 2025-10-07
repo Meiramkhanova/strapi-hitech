@@ -40,6 +40,14 @@
           "localized": true
         }
       }
+    },
+    "lab_name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

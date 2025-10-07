@@ -765,6 +765,12 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    lab_name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::lead.lead'>;
     name: Schema.Attribute.String &
