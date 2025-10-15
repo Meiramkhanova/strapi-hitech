@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_school_of_tabs",
+  "info": {
+    "displayName": "school-of-tab"
+  },
+  "options": {},
+  "attributes": {
+    "schools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::school.school"
+    }
+  },
+  "config": {}
+}

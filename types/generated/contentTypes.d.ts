@@ -577,6 +577,52 @@ export interface ApiCenterDepartmentCenterDepartment
   };
 }
 
+export interface ApiExpertExpert extends Struct.CollectionTypeSchema {
+  collectionName: 'experts';
+  info: {
+    displayName: 'expert';
+    pluralName: 'experts';
+    singularName: 'expert';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullName: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::expert.expert'>;
+    position: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -894,6 +940,67 @@ export interface ApiNavlinkNavlink extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
+  collectionName: 'schools';
+  info: {
+    displayName: 'school';
+    pluralName: 'schools';
+    singularName: 'school';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desc: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::school.school'>;
+    publishedAt: Schema.Attribute.DateTime;
+    section: Schema.Attribute.DynamicZone<
+      ['sections.tab-content-main-section']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
   collectionName: 'tab_contents';
   info: {
@@ -937,6 +1044,7 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
         'sections.about-department',
         'sections.main-areas-activity',
         'sections.centers-of-department',
+        'sections.school-of-tab',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1570,12 +1678,14 @@ declare module '@strapi/strapi' {
       'api::aboutinfo.aboutinfo': ApiAboutinfoAboutinfo;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
+      'api::expert.expert': ApiExpertExpert;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::lab-direction.lab-direction': ApiLabDirectionLabDirection;
       'api::lab-item.lab-item': ApiLabItemLabItem;
       'api::lead.lead': ApiLeadLead;
       'api::main-about-section.main-about-section': ApiMainAboutSectionMainAboutSection;
       'api::navlink.navlink': ApiNavlinkNavlink;
+      'api::school.school': ApiSchoolSchool;
       'api::tab-content.tab-content': ApiTabContentTabContent;
       'api::tab.tab': ApiTabTab;
       'api::using-ai.using-ai': ApiUsingAiUsingAi;

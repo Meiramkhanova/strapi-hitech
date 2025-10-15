@@ -268,6 +268,16 @@ export interface SectionsMissionProductInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsSchoolOfTab extends Struct.ComponentSchema {
+  collectionName: 'components_sections_school_of_tabs';
+  info: {
+    displayName: 'school-of-tab';
+  };
+  attributes: {
+    schools: Schema.Attribute.Relation<'oneToMany', 'api::school.school'>;
+  };
+}
+
 export interface SectionsSections extends Struct.ComponentSchema {
   collectionName: 'components_sections_sections';
   info: {
@@ -365,6 +375,7 @@ declare module '@strapi/strapi' {
       'sections.main-news': SectionsMainNews;
       'sections.masterd-degree-of-center': SectionsMasterdDegreeOfCenter;
       'sections.mission-product-info': SectionsMissionProductInfo;
+      'sections.school-of-tab': SectionsSchoolOfTab;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
       'sections.temp': SectionsTemp;

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tab_contents",
+  "collectionName": "schools",
   "info": {
-    "singularName": "tab-content",
-    "pluralName": "tab-contents",
-    "displayName": "TabContent"
+    "singularName": "school",
+    "pluralName": "schools",
+    "displayName": "school"
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +15,6 @@
     }
   },
   "attributes": {
-    "tab": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::tab.tab",
-      "inversedBy": "tab_contents"
-    },
     "title": {
       "type": "string",
       "pluginOptions": {
@@ -29,15 +23,24 @@
         }
       }
     },
+    "slug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "unique": true
+    },
     "desc": {
-      "type": "text",
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "icon": {
+    "image": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -52,16 +55,7 @@
         "audios"
       ]
     },
-    "slug": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "unique": true
-    },
-    "sections": {
+    "section": {
       "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
@@ -69,11 +63,7 @@
         }
       },
       "components": [
-        "sections.tab-content-main-section",
-        "sections.about-department",
-        "sections.main-areas-activity",
-        "sections.centers-of-department",
-        "sections.school-of-tab"
+        "sections.tab-content-main-section"
       ]
     }
   }
