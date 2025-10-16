@@ -7,11 +7,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "using_ais": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::using-ai.using-ai"
     }
   },
   "config": {}

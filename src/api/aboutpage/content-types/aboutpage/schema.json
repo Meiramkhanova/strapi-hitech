@@ -15,16 +15,6 @@
     }
   },
   "attributes": {
-    "about_section": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.about-department",
-      "repeatable": false
-    },
     "about_history": {
       "type": "component",
       "pluginOptions": {
@@ -34,56 +24,6 @@
       },
       "component": "components.about-history",
       "repeatable": true
-    },
-    "goals_and_missions": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "components.mission-item",
-      "repeatable": true
-    },
-    "about_approach": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.temp",
-      "repeatable": false
-    },
-    "practices_methods": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.temp",
-      "repeatable": false
-    },
-    "tech_instruments": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.about-section",
-      "repeatable": false
-    },
-    "about_using_ai": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "sections.about-using-ai-section",
-      "repeatable": false
     }
   }
 }

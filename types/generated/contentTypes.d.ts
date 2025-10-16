@@ -432,12 +432,6 @@ export interface ApiAboutpageAboutpage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about_approach: Schema.Attribute.Component<'sections.temp', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     about_history: Schema.Attribute.Component<
       'components.about-history',
       true
@@ -447,57 +441,15 @@ export interface ApiAboutpageAboutpage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    about_section: Schema.Attribute.Component<
-      'sections.about-department',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    about_using_ai: Schema.Attribute.Component<
-      'sections.about-using-ai-section',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    goals_and_missions: Schema.Attribute.Component<
-      'components.mission-item',
-      true
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::aboutpage.aboutpage'
     >;
-    practices_methods: Schema.Attribute.Component<'sections.temp', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
-    tech_instruments: Schema.Attribute.Component<
-      'sections.about-section',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -838,69 +790,10 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiMainAboutSectionMainAboutSection
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'main_about_sections';
-  info: {
-    displayName: 'main-about-section';
-    pluralName: 'main-about-sections';
-    singularName: 'main-about-section';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    desc: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    infoitems: Schema.Attribute.JSON &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::main-about-section.main-about-section'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiNavlinkNavlink extends Struct.CollectionTypeSchema {
   collectionName: 'navlinks';
   info: {
-    displayName: 'navlink';
+    displayName: 'NavLinks';
     pluralName: 'navlinks';
     singularName: 'navlink';
   };
@@ -1105,55 +998,6 @@ export interface ApiTabTab extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::tab-content.tab-content'
     >;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiUsingAiUsingAi extends Struct.CollectionTypeSchema {
-  collectionName: 'using_ais';
-  info: {
-    displayName: 'using-ai-item';
-    pluralName: 'using-ais';
-    singularName: 'using-ai';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    desc: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::using-ai.using-ai'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1683,12 +1527,10 @@ declare module '@strapi/strapi' {
       'api::lab-direction.lab-direction': ApiLabDirectionLabDirection;
       'api::lab-item.lab-item': ApiLabItemLabItem;
       'api::lead.lead': ApiLeadLead;
-      'api::main-about-section.main-about-section': ApiMainAboutSectionMainAboutSection;
       'api::navlink.navlink': ApiNavlinkNavlink;
       'api::school.school': ApiSchoolSchool;
       'api::tab-content.tab-content': ApiTabContentTabContent;
       'api::tab.tab': ApiTabTab;
-      'api::using-ai.using-ai': ApiUsingAiUsingAi;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

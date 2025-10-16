@@ -149,7 +149,6 @@ export interface SectionsAboutUsingAiSection extends Struct.ComponentSchema {
   };
   attributes: {
     title: Schema.Attribute.String;
-    using_ais: Schema.Attribute.Relation<'oneToMany', 'api::using-ai.using-ai'>;
   };
 }
 
