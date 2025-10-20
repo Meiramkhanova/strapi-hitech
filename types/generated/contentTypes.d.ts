@@ -373,49 +373,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutinfoAboutinfo extends Struct.CollectionTypeSchema {
-  collectionName: 'aboutinfos';
-  info: {
-    displayName: 'aboutinfo';
-    pluralName: 'aboutinfos';
-    singularName: 'aboutinfo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutinfo.aboutinfo'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    svgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAboutpageAboutpage extends Struct.SingleTypeSchema {
   collectionName: 'aboutpages';
   info: {
@@ -591,16 +548,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about: Schema.Attribute.DynamicZone<['sections.about']> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    aboutinfos: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutinfo.aboutinfo'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -793,7 +740,7 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
 export interface ApiNavlinkNavlink extends Struct.CollectionTypeSchema {
   collectionName: 'navlinks';
   info: {
-    displayName: 'NavLinks';
+    displayName: 'navlinks';
     pluralName: 'navlinks';
     singularName: 'navlink';
   };
@@ -897,7 +844,7 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
 export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
   collectionName: 'tab_contents';
   info: {
-    displayName: 'TabContent';
+    displayName: 'main-activity-items';
     pluralName: 'tab-contents';
     singularName: 'tab-content';
   };
@@ -968,7 +915,7 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
 export interface ApiTabTab extends Struct.CollectionTypeSchema {
   collectionName: 'tabs';
   info: {
-    displayName: 'Tab';
+    displayName: 'main-activity';
     pluralName: 'tabs';
     singularName: 'tab';
   };
@@ -1519,7 +1466,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::aboutinfo.aboutinfo': ApiAboutinfoAboutinfo;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
       'api::expert.expert': ApiExpertExpert;

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "tab",
     "pluralName": "tabs",
-    "displayName": "Tab"
+    "displayName": "main-activity"
   },
   "options": {
     "draftAndPublish": true

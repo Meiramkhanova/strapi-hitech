@@ -91,21 +91,6 @@ export interface ComponentsOrderTitle extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsAbout extends Struct.ComponentSchema {
-  collectionName: 'components_sections_abouts';
-  info: {
-    displayName: 'about';
-  };
-  attributes: {
-    desc: Schema.Attribute.Text;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SectionsAboutDepartment extends Struct.ComponentSchema {
   collectionName: 'components_sections_about_departments';
   info: {
@@ -138,16 +123,6 @@ export interface SectionsAboutSection extends Struct.ComponentSchema {
       'components.activity-item',
       true
     >;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsAboutUsingAiSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_about_using_ai_sections';
-  info: {
-    displayName: 'about-using-ai-section';
-  };
-  attributes: {
     title: Schema.Attribute.String;
   };
 }
@@ -360,11 +335,9 @@ declare module '@strapi/strapi' {
       'components.mission-item': ComponentsMissionItem;
       'components.order-item': ComponentsOrderItem;
       'components.order-title': ComponentsOrderTitle;
-      'sections.about': SectionsAbout;
       'sections.about-department': SectionsAboutDepartment;
       'sections.about-department-center': SectionsAboutDepartmentCenter;
       'sections.about-section': SectionsAboutSection;
-      'sections.about-using-ai-section': SectionsAboutUsingAiSection;
       'sections.center-title-order-items': SectionsCenterTitleOrderItems;
       'sections.centers-of-department': SectionsCentersOfDepartment;
       'sections.fintech-item': SectionsFintechItem;
