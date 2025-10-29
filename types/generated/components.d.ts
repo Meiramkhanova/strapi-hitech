@@ -151,6 +151,19 @@ export interface SectionsCentersOfDepartment extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCreditAnalysis extends Struct.ComponentSchema {
+  collectionName: 'components_sections_credit_analyses';
+  info: {
+    displayName: 'CreditAnalysis';
+  };
+  attributes: {
+    financeDesc: Schema.Attribute.String;
+    productDesc: Schema.Attribute.String;
+    riskManagementDesc: Schema.Attribute.String;
+    underwritingDesc: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsFintechItem extends Struct.ComponentSchema {
   collectionName: 'components_sections_fintech_items';
   info: {
@@ -242,6 +255,18 @@ export interface SectionsMissionProductInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsSchoolMainSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_school_main_sections';
+  info: {
+    displayName: 'SchoolMainSection';
+  };
+  attributes: {
+    desc: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsSchoolOfTab extends Struct.ComponentSchema {
   collectionName: 'components_sections_school_of_tabs';
   info: {
@@ -288,6 +313,19 @@ export interface SectionsTemp extends Struct.ComponentSchema {
     >;
     desc: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTitleIconedItems extends Struct.ComponentSchema {
+  collectionName: 'components_sections_title_iconed_items';
+  info: {
+    displayName: 'QuantitativeRiskManagement';
+  };
+  attributes: {
+    financeDesc: Schema.Attribute.String;
+    projectDesc: Schema.Attribute.String;
+    quantitativeModeling: Schema.Attribute.String;
+    riskManagementDesc: Schema.Attribute.String;
   };
 }
 
@@ -340,6 +378,7 @@ declare module '@strapi/strapi' {
       'sections.about-section': SectionsAboutSection;
       'sections.center-title-order-items': SectionsCenterTitleOrderItems;
       'sections.centers-of-department': SectionsCentersOfDepartment;
+      'sections.credit-analysis': SectionsCreditAnalysis;
       'sections.fintech-item': SectionsFintechItem;
       'sections.fintech-section': SectionsFintechSection;
       'sections.lab-item-single-info': SectionsLabItemSingleInfo;
@@ -347,10 +386,12 @@ declare module '@strapi/strapi' {
       'sections.main-news': SectionsMainNews;
       'sections.masterd-degree-of-center': SectionsMasterdDegreeOfCenter;
       'sections.mission-product-info': SectionsMissionProductInfo;
+      'sections.school-main-section': SectionsSchoolMainSection;
       'sections.school-of-tab': SectionsSchoolOfTab;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
       'sections.temp': SectionsTemp;
+      'sections.title-iconed-items': SectionsTitleIconedItems;
       'sections.title-ordered-big-items': SectionsTitleOrderedBigItems;
       'sections.title-ordered-items': SectionsTitleOrderedItems;
       'sections.title-unordered-items': SectionsTitleUnorderedItems;

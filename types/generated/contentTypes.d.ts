@@ -413,6 +413,41 @@ export interface ApiAboutpageAboutpage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAnalytycspageAnalytycspage extends Struct.SingleTypeSchema {
+  collectionName: 'analytycspages';
+  info: {
+    displayName: 'analytycspage';
+    pluralName: 'analytycspages';
+    singularName: 'analytycspage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    center_departments: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::center-department.center-department'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::analytycspage.analytycspage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCenterDepartmentCenterDepartment
   extends Struct.CollectionTypeSchema {
   collectionName: 'center_departments';
@@ -805,17 +840,23 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::school.school'>;
+    publishedAt: Schema.Attribute.DateTime;
+    schoolName: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::school.school'>;
-    publishedAt: Schema.Attribute.DateTime;
-    section: Schema.Attribute.DynamicZone<
-      ['sections.tab-content-main-section']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'sections.school-main-section',
+        'sections.mission-product-info',
+        'sections.center-title-order-items',
+        'sections.title-iconed-items',
+        'sections.credit-analysis',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -824,12 +865,6 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
       }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Unique &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -844,7 +879,7 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
 export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
   collectionName: 'tab_contents';
   info: {
-    displayName: 'main-activity-items';
+    displayName: 'main-activity-item';
     pluralName: 'tab-contents';
     singularName: 'tab-content';
   };
@@ -915,7 +950,7 @@ export interface ApiTabContentTabContent extends Struct.CollectionTypeSchema {
 export interface ApiTabTab extends Struct.CollectionTypeSchema {
   collectionName: 'tabs';
   info: {
-    displayName: 'main-activity';
+    displayName: 'main-activity-type';
     pluralName: 'tabs';
     singularName: 'tab';
   };
@@ -1467,6 +1502,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
+      'api::analytycspage.analytycspage': ApiAnalytycspageAnalytycspage;
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
       'api::expert.expert': ApiExpertExpert;
       'api::homepage.homepage': ApiHomepageHomepage;

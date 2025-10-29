@@ -4,7 +4,7 @@
   "info": {
     "singularName": "tab-content",
     "pluralName": "tab-contents",
-    "displayName": "main-activity-items"
+    "displayName": "main-activity-item"
   },
   "options": {
     "draftAndPublish": true

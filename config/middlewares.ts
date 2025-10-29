@@ -7,7 +7,13 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:", "http:"],
+          "connect-src": [
+            "'self'",
+            "https:",
+            "http:",
+            "https://hitech-backend-narxoz.duckdns.org",
+            "https://hitech-narxoz.duckdns.org",
+          ],
           "img-src": [
             "'self'",
             "data:",
@@ -23,10 +29,12 @@ export default [
   {
     name: "strapi::cors",
     config: {
+      enables: true,
       origin: ["http://localhost:3000", "https://hitech-narxoz.duckdns.org"],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       keepHeaderOnError: true,
+      credentials: true,
     },
   },
   "strapi::poweredBy",

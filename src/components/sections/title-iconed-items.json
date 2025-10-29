@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_title_iconed_items",
+  "info": {
+    "displayName": "QuantitativeRiskManagement"
+  },
+  "options": {},
+  "attributes": {
+    "projectDesc": {
+      "type": "string"
+    },
+    "financeDesc": {
+      "type": "string"
+    },
+    "riskManagementDesc": {
+      "type": "string"
+    },
+    "quantitativeModeling": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

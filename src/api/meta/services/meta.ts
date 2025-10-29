@@ -1,0 +1,5 @@
+/**
+ * meta service
+ */
+
+export default () => ({});

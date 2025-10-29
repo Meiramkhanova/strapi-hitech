@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_credit_analyses",
+  "info": {
+    "displayName": "CreditAnalysis"
+  },
+  "options": {},
+  "attributes": {
+    "productDesc": {
+      "type": "string"
+    },
+    "financeDesc": {
+      "type": "string"
+    },
+    "riskManagementDesc": {
+      "type": "string"
+    },
+    "underwritingDesc": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "analytycspages",
+  "info": {
+    "singularName": "analytycspage",
+    "pluralName": "analytycspages",
+    "displayName": "analytycspage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "center_departments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::center-department.center-department"
+    }
+  }
+}

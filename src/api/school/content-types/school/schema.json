@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "title": {
+    "schoolName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -40,22 +40,7 @@
         }
       }
     },
-    "image": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "section": {
+    "sections": {
       "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
@@ -63,7 +48,11 @@
         }
       },
       "components": [
-        "sections.tab-content-main-section"
+        "sections.school-main-section",
+        "sections.mission-product-info",
+        "sections.center-title-order-items",
+        "sections.title-iconed-items",
+        "sections.credit-analysis"
       ]
     }
   }
