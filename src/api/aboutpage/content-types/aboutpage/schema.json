@@ -24,6 +24,22 @@
       },
       "component": "components.about-history",
       "repeatable": true
+    },
+    "first_section_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "first_section_description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

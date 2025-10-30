@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_schools_of_yaizies",
+  "info": {
+    "displayName": "schools_of_yaizy"
+  },
+  "options": {},
+  "attributes": {
+    "headline_title": {
+      "type": "string"
+    },
+    "yayzy_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "info_items": {
+      "type": "component",
+      "component": "components.yaizy-info-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

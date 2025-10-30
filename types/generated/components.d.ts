@@ -91,6 +91,18 @@ export interface ComponentsOrderTitle extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsYaizyInfoItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_yaizy_info_items';
+  info: {
+    displayName: 'yaizy_info_item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsAboutDepartment extends Struct.ComponentSchema {
   collectionName: 'components_sections_about_departments';
   info: {
@@ -277,6 +289,22 @@ export interface SectionsSchoolOfTab extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsSchoolsOfYaizy extends Struct.ComponentSchema {
+  collectionName: 'components_sections_schools_of_yaizies';
+  info: {
+    displayName: 'schools_of_yaizy';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    headline_title: Schema.Attribute.String;
+    info_items: Schema.Attribute.Component<'components.yaizy-info-item', true>;
+    title: Schema.Attribute.String;
+    yayzy_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface SectionsSections extends Struct.ComponentSchema {
   collectionName: 'components_sections_sections';
   info: {
@@ -373,6 +401,7 @@ declare module '@strapi/strapi' {
       'components.mission-item': ComponentsMissionItem;
       'components.order-item': ComponentsOrderItem;
       'components.order-title': ComponentsOrderTitle;
+      'components.yaizy-info-item': ComponentsYaizyInfoItem;
       'sections.about-department': SectionsAboutDepartment;
       'sections.about-department-center': SectionsAboutDepartmentCenter;
       'sections.about-section': SectionsAboutSection;
@@ -388,6 +417,7 @@ declare module '@strapi/strapi' {
       'sections.mission-product-info': SectionsMissionProductInfo;
       'sections.school-main-section': SectionsSchoolMainSection;
       'sections.school-of-tab': SectionsSchoolOfTab;
+      'sections.schools-of-yaizy': SectionsSchoolsOfYaizy;
       'sections.sections': SectionsSections;
       'sections.tab-content-main-section': SectionsTabContentMainSection;
       'sections.temp': SectionsTemp;
