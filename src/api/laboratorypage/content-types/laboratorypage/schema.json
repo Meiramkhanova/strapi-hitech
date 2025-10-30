@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "laboratorypages",
+  "info": {
+    "singularName": "laboratorypage",
+    "pluralName": "laboratorypages",
+    "displayName": "laboratorypage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "lab_directions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lab-direction.lab-direction"
+    }
+  }
+}

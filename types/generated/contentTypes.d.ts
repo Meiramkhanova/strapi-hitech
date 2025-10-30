@@ -611,6 +611,39 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiKnowledgepageKnowledgepage extends Struct.SingleTypeSchema {
+  collectionName: 'knowledgepages';
+  info: {
+    displayName: 'knowledgepage';
+    pluralName: 'knowledgepages';
+    singularName: 'knowledgepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lab_items: Schema.Attribute.Relation<'oneToMany', 'api::lab-item.lab-item'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::knowledgepage.knowledgepage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    schools: Schema.Attribute.Relation<'oneToMany', 'api::school.school'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLabDirectionLabDirection
   extends Struct.CollectionTypeSchema {
   collectionName: 'lab_directions';
@@ -712,6 +745,42 @@ export interface ApiLabItemLabItem extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLaboratorypageLaboratorypage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'laboratorypages';
+  info: {
+    displayName: 'laboratorypage';
+    pluralName: 'laboratorypages';
+    singularName: 'laboratorypage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lab_directions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lab-direction.lab-direction'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::laboratorypage.laboratorypage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1506,8 +1575,10 @@ declare module '@strapi/strapi' {
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
       'api::expert.expert': ApiExpertExpert;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::knowledgepage.knowledgepage': ApiKnowledgepageKnowledgepage;
       'api::lab-direction.lab-direction': ApiLabDirectionLabDirection;
       'api::lab-item.lab-item': ApiLabItemLabItem;
+      'api::laboratorypage.laboratorypage': ApiLaboratorypageLaboratorypage;
       'api::lead.lead': ApiLeadLead;
       'api::navlink.navlink': ApiNavlinkNavlink;
       'api::school.school': ApiSchoolSchool;

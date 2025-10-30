@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "knowledgepages",
+  "info": {
+    "singularName": "knowledgepage",
+    "pluralName": "knowledgepages",
+    "displayName": "knowledgepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "schools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::school.school"
+    },
+    "lab_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lab-item.lab-item"
+    }
+  }
+}
