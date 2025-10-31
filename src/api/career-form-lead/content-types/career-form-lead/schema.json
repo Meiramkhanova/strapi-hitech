@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "leads",
+  "collectionName": "career_form_leads",
   "info": {
-    "singularName": "lead",
-    "pluralName": "leads",
-    "displayName": "LaboratoryLead"
+    "singularName": "career-form-lead",
+    "pluralName": "career-form-leads",
+    "displayName": "CareerFormLead"
   },
   "options": {
     "draftAndPublish": true
@@ -30,7 +30,6 @@
           "localized": true
         }
       },
-      "required": true,
       "unique": true
     },
     "phone": {
@@ -41,8 +40,8 @@
         }
       }
     },
-    "lab_name": {
-      "type": "string",
+    "message": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true

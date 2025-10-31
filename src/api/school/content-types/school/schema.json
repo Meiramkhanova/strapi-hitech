@@ -52,7 +52,8 @@
         "sections.mission-product-info",
         "sections.center-title-order-items",
         "sections.title-iconed-items",
-        "sections.credit-analysis"
+        "sections.credit-analysis",
+        "sections.example-projects"
       ]
     }
   }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_example_projects",
+  "info": {
+    "displayName": "exampleProjects"
+  },
+  "options": {},
+  "attributes": {
+    "example_projects": {
+      "type": "component",
+      "component": "components.example-project",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

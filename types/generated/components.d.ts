@@ -44,6 +44,33 @@ export interface ComponentsApproachItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsExampleProject extends Struct.ComponentSchema {
+  collectionName: 'components_components_example_projects';
+  info: {
+    displayName: 'exampleProject';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsItCaseItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_it_case_items';
+  info: {
+    displayName: 'it-case-item';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsMainSwiper extends Struct.ComponentSchema {
   collectionName: 'components_components_main_swipers';
   info: {
@@ -88,6 +115,21 @@ export interface ComponentsOrderTitle extends Struct.ComponentSchema {
   attributes: {
     order: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsTeamPersonInfo extends Struct.ComponentSchema {
+  collectionName: 'components_components_team_person_infos';
+  info: {
+    displayName: 'team-person-info';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    graduate_direction: Schema.Attribute.String;
+    graduate_year: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    person_name: Schema.Attribute.String;
+    person_surname: Schema.Attribute.String;
   };
 }
 
@@ -173,6 +215,19 @@ export interface SectionsCreditAnalysis extends Struct.ComponentSchema {
     productDesc: Schema.Attribute.String;
     riskManagementDesc: Schema.Attribute.String;
     underwritingDesc: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsExampleProjects extends Struct.ComponentSchema {
+  collectionName: 'components_sections_example_projects';
+  info: {
+    displayName: 'exampleProjects';
+  };
+  attributes: {
+    example_projects: Schema.Attribute.Component<
+      'components.example-project',
+      true
+    >;
   };
 }
 
@@ -397,10 +452,13 @@ declare module '@strapi/strapi' {
       'components.about-history': ComponentsAboutHistory;
       'components.activity-item': ComponentsActivityItem;
       'components.approach-item': ComponentsApproachItem;
+      'components.example-project': ComponentsExampleProject;
+      'components.it-case-item': ComponentsItCaseItem;
       'components.main-swiper': ComponentsMainSwiper;
       'components.mission-item': ComponentsMissionItem;
       'components.order-item': ComponentsOrderItem;
       'components.order-title': ComponentsOrderTitle;
+      'components.team-person-info': ComponentsTeamPersonInfo;
       'components.yaizy-info-item': ComponentsYaizyInfoItem;
       'sections.about-department': SectionsAboutDepartment;
       'sections.about-department-center': SectionsAboutDepartmentCenter;
@@ -408,6 +466,7 @@ declare module '@strapi/strapi' {
       'sections.center-title-order-items': SectionsCenterTitleOrderItems;
       'sections.centers-of-department': SectionsCentersOfDepartment;
       'sections.credit-analysis': SectionsCreditAnalysis;
+      'sections.example-projects': SectionsExampleProjects;
       'sections.fintech-item': SectionsFintechItem;
       'sections.fintech-section': SectionsFintechSection;
       'sections.lab-item-single-info': SectionsLabItemSingleInfo;

@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_center_pages",
+  "info": {
+    "singularName": "career-center-page",
+    "pluralName": "career-center-pages",
+    "displayName": "career-center-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "international_team": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.team-person-info",
+      "repeatable": true
+    }
+  }
+}

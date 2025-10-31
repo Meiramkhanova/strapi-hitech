@@ -23,7 +23,7 @@
         }
       }
     },
-    "position": {
+    "role": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

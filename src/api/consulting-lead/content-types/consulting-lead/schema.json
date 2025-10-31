@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "leads",
+  "collectionName": "consulting_leads",
   "info": {
-    "singularName": "lead",
-    "pluralName": "leads",
-    "displayName": "LaboratoryLead"
+    "singularName": "consulting-lead",
+    "pluralName": "consulting-leads",
+    "displayName": "ConsultingLead"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "name": {
+    "fullName": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -30,18 +30,9 @@
           "localized": true
         }
       },
-      "required": true,
       "unique": true
     },
     "phone": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "lab_name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

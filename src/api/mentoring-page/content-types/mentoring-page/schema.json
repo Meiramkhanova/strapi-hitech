@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "mentoring_pages",
+  "info": {
+    "singularName": "mentoring-page",
+    "pluralName": "mentoring-pages",
+    "displayName": "mentoring-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "experts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expert.expert"
+    }
+  }
+}

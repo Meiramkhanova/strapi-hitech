@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_example_projects",
+  "info": {
+    "displayName": "exampleProject"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

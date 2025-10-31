@@ -460,6 +460,104 @@ export interface ApiAnalytycspageAnalytycspage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCareerCenterPageCareerCenterPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'career_center_pages';
+  info: {
+    displayName: 'career-center-page';
+    pluralName: 'career-center-pages';
+    singularName: 'career-center-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    international_team: Schema.Attribute.Component<
+      'components.team-person-info',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-center-page.career-center-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCareerFormLeadCareerFormLead
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'career_form_leads';
+  info: {
+    displayName: 'CareerFormLead';
+    pluralName: 'career-form-leads';
+    singularName: 'career-form-lead';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-form-lead.career-form-lead'
+    >;
+    message: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCenterDepartmentCenterDepartment
   extends Struct.CollectionTypeSchema {
   collectionName: 'center_departments';
@@ -533,6 +631,57 @@ export interface ApiCenterDepartmentCenterDepartment
   };
 }
 
+export interface ApiConsultingLeadConsultingLead
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'consulting_leads';
+  info: {
+    displayName: 'ConsultingLead';
+    pluralName: 'consulting-leads';
+    singularName: 'consulting-lead';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    fullName: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::consulting-lead.consulting-lead'
+    >;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExpertExpert extends Struct.CollectionTypeSchema {
   collectionName: 'experts';
   info: {
@@ -566,13 +715,13 @@ export interface ApiExpertExpert extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::expert.expert'>;
-    position: Schema.Attribute.String &
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -617,6 +766,101 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         };
       }>;
     tabs: Schema.Attribute.Relation<'oneToMany', 'api::tab.tab'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiItDeveloperItDeveloper extends Struct.CollectionTypeSchema {
+  collectionName: 'it_developers';
+  info: {
+    displayName: 'ItDevelopmentLead';
+    pluralName: 'it-developers';
+    singularName: 'it-developer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::it-developer.it-developer'
+    >;
+    message: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiItDevelopmentPageItDevelopmentPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'it_development_pages';
+  info: {
+    displayName: 'it-development-page';
+    pluralName: 'it-development-pages';
+    singularName: 'it-development-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    cases: Schema.Attribute.Component<'components.it-case-item', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::it-development-page.it-development-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -846,7 +1090,7 @@ export interface ApiLaboratorypageLaboratorypage
 export interface ApiLeadLead extends Struct.CollectionTypeSchema {
   collectionName: 'leads';
   info: {
-    displayName: 'Lead';
+    displayName: 'LaboratoryLead';
     pluralName: 'leads';
     singularName: 'lead';
   };
@@ -890,6 +1134,95 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMentoringLeadMentoringLead
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mentoring_leads';
+  info: {
+    displayName: 'MentoringLead';
+    pluralName: 'mentoring-leads';
+    singularName: 'mentoring-lead';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mentoring-lead.mentoring-lead'
+    >;
+    message: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMentoringPageMentoringPage extends Struct.SingleTypeSchema {
+  collectionName: 'mentoring_pages';
+  info: {
+    displayName: 'mentoring-page';
+    pluralName: 'mentoring-pages';
+    singularName: 'mentoring-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experts: Schema.Attribute.Relation<'oneToMany', 'api::expert.expert'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mentoring-page.mentoring-page'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -981,6 +1314,7 @@ export interface ApiSchoolSchool extends Struct.CollectionTypeSchema {
         'sections.center-title-order-items',
         'sections.title-iconed-items',
         'sections.credit-analysis',
+        'sections.example-projects',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1628,14 +1962,21 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aboutpage.aboutpage': ApiAboutpageAboutpage;
       'api::analytycspage.analytycspage': ApiAnalytycspageAnalytycspage;
+      'api::career-center-page.career-center-page': ApiCareerCenterPageCareerCenterPage;
+      'api::career-form-lead.career-form-lead': ApiCareerFormLeadCareerFormLead;
       'api::center-department.center-department': ApiCenterDepartmentCenterDepartment;
+      'api::consulting-lead.consulting-lead': ApiConsultingLeadConsultingLead;
       'api::expert.expert': ApiExpertExpert;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::it-developer.it-developer': ApiItDeveloperItDeveloper;
+      'api::it-development-page.it-development-page': ApiItDevelopmentPageItDevelopmentPage;
       'api::knowledgepage.knowledgepage': ApiKnowledgepageKnowledgepage;
       'api::lab-direction.lab-direction': ApiLabDirectionLabDirection;
       'api::lab-item.lab-item': ApiLabItemLabItem;
       'api::laboratorypage.laboratorypage': ApiLaboratorypageLaboratorypage;
       'api::lead.lead': ApiLeadLead;
+      'api::mentoring-lead.mentoring-lead': ApiMentoringLeadMentoringLead;
+      'api::mentoring-page.mentoring-page': ApiMentoringPageMentoringPage;
       'api::navlink.navlink': ApiNavlinkNavlink;
       'api::school.school': ApiSchoolSchool;
       'api::tab-content.tab-content': ApiTabContentTabContent;

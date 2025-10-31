@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_components_team_person_infos",
+  "info": {
+    "displayName": "team-person-info"
+  },
+  "options": {},
+  "attributes": {
+    "person_name": {
+      "type": "string"
+    },
+    "person_surname": {
+      "type": "string"
+    },
+    "graduate_year": {
+      "type": "date"
+    },
+    "graduate_direction": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

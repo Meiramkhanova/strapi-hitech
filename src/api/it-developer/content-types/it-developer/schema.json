@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "leads",
+  "collectionName": "it_developers",
   "info": {
-    "singularName": "lead",
-    "pluralName": "leads",
-    "displayName": "LaboratoryLead"
+    "singularName": "it-developer",
+    "pluralName": "it-developers",
+    "displayName": "ItDevelopmentLead"
   },
   "options": {
     "draftAndPublish": true
@@ -41,8 +41,8 @@
         }
       }
     },
-    "lab_name": {
-      "type": "string",
+    "message": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true

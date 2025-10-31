@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "it_development_pages",
+  "info": {
+    "singularName": "it-development-page",
+    "pluralName": "it-development-pages",
+    "displayName": "it-development-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "cases": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.it-case-item",
+      "repeatable": true
+    }
+  }
+}
